@@ -4435,7 +4435,7 @@ end )
 
 hook.Add( "SGSPlayerChangedWorld", "ChangeWorldNegateFallDamage", function( ply, world )
 	if IsValid( ply ) then
-		ply.last_world_change = CurTime()
+		//ply.last_world_change = CurTime()
 	end
 end )
 
@@ -5167,7 +5167,7 @@ hook.Add( "PlayerSay", "SGS_ChatAdminMode", SGS_ChatAdminMode )
 function GM:OnPlayerHitGround( ply, bInWater, bOnFloater, flFallSpeed )
 	if ply.amode then return end
 
-	if CurTime() < ply.last_world_change + 1 then return end
+	//if CurTime() < ply.last_world_change + 1 then return end
 
 	
 	if flFallSpeed >= 380 and flFallSpeed <= 1000 then
