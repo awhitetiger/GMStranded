@@ -3,7 +3,7 @@ local EntityMeta = FindMetaTable("Entity")
 
 if !file.Exists( "sgstranded/newsaves", "DATA" ) then
 	file.CreateDir( "sgstranded" )
-	file.CreateDir( "newsaves" )
+	file.CreateDir( "sgstranded/newsaves" )
 end
 
 net.Receive( "sgs_readytoload", function( len, ply )
