@@ -21,14 +21,14 @@ function SGS_SpawnRandomBoss()
 end
 
 function SGS_SpawnAntlionBoss()
-	SGS_MakeCreature( "npc_antlionguard", GAMEMODE.Worlds.tblWorlds[2].BossSpawnPos + Vector(200,0,0), nil )
+	SGS_MakeCreature( "npc_antlionguard", GAMEMODE.Worlds.tblWorlds[8].BossSpawnPos + Vector(200,0,0), nil )
 	for k, v in pairs(player.GetAll()) do
 		v:SendMessage("The Antlion Boss emerges in the Arena!", 60, Color(255, 255, 0, 255))
 	end
 end
 
 function SGS_SpawnHunterBoss()
-	SGS_MakeCreature( "npc_hunter", GAMEMODE.Worlds.tblWorlds[2].BossSpawnPos + Vector(200,0,0), nil )
+	SGS_MakeCreature( "npc_hunter", GAMEMODE.Worlds.tblWorlds[8].BossSpawnPos + Vector(200,0,0), nil )
 	for k, v in pairs(player.GetAll()) do
 		v:SendMessage("The Hunter Boss has arrived in the Arena!", 60, Color(255, 255, 0, 255))
 	end
