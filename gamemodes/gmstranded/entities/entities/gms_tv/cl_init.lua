@@ -140,7 +140,7 @@ function ENT:ReloadPlayer()
 	self.m_bHasTwitch = nil
 	self.m_bTwitchStream = nil
 	self:Reload()
-	self.m_pnlWebPage:OpenURL( "https://linktowebsite/player.php" )
+	self.m_pnlWebPage:OpenURL( "http://wallahiadeem.chickenkiller.com/stranded/player/player.php" )
 end
 
 function ENT:OnYoutubeLoaded()
@@ -180,7 +180,7 @@ end
 function ENT:UnloadVideo()
 	
 	if self.m_bTwitchStream then
-		self.m_pnlWebPage:OpenURL( "https://linktowebsite/player.php" )
+		self.m_pnlWebPage:OpenURL( "http://wallahiadeem.chickenkiller.com/stranded/player/player.php" )
 	else
 		if self:HasPlayer() then
 			self.m_pnlWebPage:RunJavascript( [[
