@@ -18,7 +18,7 @@ ACH.short = "3yearhat"
 ACH.long = "G4P Stranded 3 Year Anniversary"
 ACH.cc = "sgs_equiphat 3yearhat"
 ACH.at = "Access Q > Options menu to equip your new hat."
-ACH.show = true
+ACH.show = false --not needed.
 ACH.displaytext = "Play during the 3 year anniversary event"
 ACH.reward = "3 Year Anniversary Hat"
 Achievement_RegisterAchievement( ACH )
@@ -125,7 +125,7 @@ local ACH = {}
 ACH.short = "goggleshat"
 ACH.long = "Assassinate the President"
 ACH.cc = "sgs_equiphat goggleshat"
-ACH.show = true
+ACH.show = true --not needed.
 ACH.displaytext = "Kill the President in PvP."
 ACH.reward = "Special Hat"
 ACH.associatedstat = "combat7"
