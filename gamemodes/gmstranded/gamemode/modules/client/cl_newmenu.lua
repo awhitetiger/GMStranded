@@ -73,9 +73,6 @@ function PANEL:DrawFrame()
 	end
 
 	GAMEMODE.NewMenu.btn_option1 = vgui.Create( "menu_button", button_dock )
-	GAMEMODE.NewMenu.btn_option2 = vgui.Create( "menu_button", button_dock )
-	GAMEMODE.NewMenu.btn_option3 = vgui.Create( "menu_button", button_dock )
-	GAMEMODE.NewMenu.btn_option9 = vgui.Create( "menu_button", button_dock )
 	GAMEMODE.NewMenu.btn_option5 = vgui.Create( "menu_button", button_dock )
 	GAMEMODE.NewMenu.btn_option6 = vgui.Create( "menu_button", button_dock )
 	GAMEMODE.NewMenu.btn_option7 = vgui.Create( "menu_button", button_dock )
@@ -91,48 +88,6 @@ function PANEL:DrawFrame()
 		
 		if ValidPanel(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "motd_panel", content_window )
-		self.content:Dock( FILL )
-		self.content:DockMargin( 0, 0, 0, 0 )
-	end
-
-	GAMEMODE.NewMenu.btn_option2:SetWide( 130 )
-	GAMEMODE.NewMenu.btn_option2:SetText( "Stranded WIKI" )
-	GAMEMODE.NewMenu.btn_option2:DockMargin( 2, 2, 4, 0 )
-	GAMEMODE.NewMenu.btn_option2:Dock( TOP )
-	GAMEMODE.NewMenu.btn_option2.OnMousePressed = function()
-		DeactivateAllButtons()
-		GAMEMODE.NewMenu.btn_option2.active = true
-		
-		if ValidPanel(self.content) then self.content:Remove() end
-		self.content = vgui.Create( "wiki_panel", content_window )
-		self.content:Dock( FILL )
-		self.content:DockMargin( 0, 0, 0, 0 )
-	end
-
-	GAMEMODE.NewMenu.btn_option3:SetWide( 130 )
-	GAMEMODE.NewMenu.btn_option3:SetText( "Beginner's Guide" )
-	GAMEMODE.NewMenu.btn_option3:DockMargin( 2, 2, 4, 0 )
-	GAMEMODE.NewMenu.btn_option3:Dock( TOP )
-	GAMEMODE.NewMenu.btn_option3.OnMousePressed = function()
-		DeactivateAllButtons()
-		GAMEMODE.NewMenu.btn_option3.active = true
-		
-		if ValidPanel(self.content) then self.content:Remove() end
-		self.content = vgui.Create( "guide_panel", content_window )
-		self.content:Dock( FILL )
-		self.content:DockMargin( 0, 0, 0, 0 )
-	end
-
-	GAMEMODE.NewMenu.btn_option9:SetWide( 130 )
-	GAMEMODE.NewMenu.btn_option9:SetText( "Forums" )
-	GAMEMODE.NewMenu.btn_option9:DockMargin( 2, 2, 4, 0 )
-	GAMEMODE.NewMenu.btn_option9:Dock( TOP )
-	GAMEMODE.NewMenu.btn_option9.OnMousePressed = function()
-		DeactivateAllButtons()
-		GAMEMODE.NewMenu.btn_option9.active = true
-		
-		if ValidPanel(self.content) then self.content:Remove() end
-		self.content = vgui.Create( "forums_panel", content_window )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
 	end
@@ -192,10 +147,9 @@ function PANEL:DrawFrame()
 		DeactivateAllButtons()
 		GAMEMODE.NewMenu.btn_option1.active = true
 		if ValidPanel(self.content) then self.content:Remove() end
-		self.content = vgui.Create( "motd_panel", content_window )
+		self.content = vgui.Create( "leaderboard_panel", content_window )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
-		self.firsttime = false
 	end
 	
 	
