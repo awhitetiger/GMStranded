@@ -332,16 +332,14 @@ function SGS_SetUpTablesShared()
 		"I sell lots of useful stuff, but my buddy Dr.K on the main Island sells hats!",
 		"I've been stuck on this island for over 3 years now. I've kind of given up all hope.",
 		"In case of emergency, I've usually got a pretty steady supply of fruit berries growing on my island. Help yourself!",
-		"Be extra careful with merchandise purchased from my store. I don't typically give refunds for any reason.",
-		"The server restarts every Wednesday and Saturday at 10pm PST. Saturday restarts are a full map wipe!"
+		"Be extra careful with merchandise purchased from my store. I don't typically give refunds for any reason."
 	}
 							
 	SGS.BreenChatMessages = {
 		"Where am I? This isn't right. ",
 		"Tis the season... for savings! Come see me for holiday specials!",
 		"Bring your Candy Canes to me! I'll trade them for some fun stuff!",
-		"One free trip to Xen for the first 5000 customers!",
-		"Did you know G4P has a Facebook page? www.facebook.com/g4pcommunity",
+		"One free trip to Xen for the first 5000 customers!"
 		"Hey.. Hey %P... Hey... Hey! Hey... Hey..",
 		"%P, Where did you get that shirt? From Vorty? Bah!"
 	}
