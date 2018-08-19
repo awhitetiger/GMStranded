@@ -169,7 +169,7 @@ local MOTD = {}
 function MOTD:Init()
 	local HTML = vgui.Create("DHTML", self)
 	HTML:Dock( FILL )
-	HTML:OpenURL("http://www.g4p.org/StrandedMenu")
+	HTML:OpenURL("http://wallahiadeem.chickenkiller.com")
 end
 function MOTD:Paint()
 
@@ -191,7 +191,7 @@ local GUIDE = {}
 function GUIDE:Init()
 	local HTML = vgui.Create("DHTML", self)
 	HTML:Dock( FILL )
-	HTML:OpenURL("http://www.g4p.org/StrandedMenu/guide.php")
+	HTML:OpenURL("http://wallahiadeem.chickenkiller.com/guide")
 end
 function GUIDE:Paint()
 
@@ -213,7 +213,7 @@ local DONATE = {}
 function DONATE:Init()
 	local HTML = vgui.Create("DHTML", self)
 	HTML:Dock( FILL )
-	HTML:OpenURL("https://g4p.org/StrandedMenu/donate.php")
+	HTML:OpenURL("http://wallahiadeem.chickenkiller.com/donate")
 end
 function DONATE:Paint()
 
@@ -224,7 +224,7 @@ local LEADERBOARD = {}
 function LEADERBOARD:Init()
 	local HTML = vgui.Create("DHTML", self)
 	HTML:Dock( FILL )
-	HTML:OpenURL("https://g4p.org/StrandedMenu/leaderboard.php")
+	HTML:OpenURL("http://wallahiadeem.chickenkiller.com/leaderboard")
 end
 function LEADERBOARD:Paint()
 
