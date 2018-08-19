@@ -3759,14 +3759,8 @@ timer.Create( "SGS_SickTick", 45, 0, SGS_SickTick )
 function SGS_UpdateAdText()
 
 	local adtext = {
-		"To report bugs or make suggestions, please visit our site at www.g4p.org",
 		"Report players or bugs using our !report feature!",
-		"Register for membership by entering your SteamID on our website's main page. Members have some gameplay benefits.",
-		"Please consider donating. For information on how to donate and donator perks please press F9 and click on donate!",
-		"The servers will restart every WEDNESDAY/SATURDAY at 10PM Pacific Standard Time (GMT-8)",
-		"Check out the leaderboard on our website, or by pressing F9",
-		"Our new Restart/Update day is SATURDAY at 10pm PST. Don't miss it!",
-		"Report griefers or rulebreakers on our Forums. (www.g4p.org)"
+		"Please consider donating. For information on how to donate and donator perks please press F9 and click on donate!"
 		}
 
 	net.Start("sgs_updateadtext")
