@@ -1,3 +1,5 @@
+// Fixed by http://steamcommunity.com/id/TToommaattoo/
+
 include "shared.lua"
 CreateClientConVar( "sgs_tv_volume", "8", true, false )
 
@@ -89,7 +91,6 @@ function OnYoutubeLoaded( strID )
 	for k, ent in pairs( ents.FindByClass("gms_tv") ) do
 		if ent.m_strUID ~= strID then continue end
 		ent:OnYoutubeLoaded()
-		break
 	end
 end
 
@@ -139,7 +140,7 @@ function ENT:ReloadPlayer()
 	self.m_bHasTwitch = nil
 	self.m_bTwitchStream = nil
 	self:Reload()
-	self.m_pnlWebPage:OpenURL( "http://g4p.org/YouTube/player.php?uid=".. self.m_strUID )
+	self.m_pnlWebPage:OpenURL( "https://linktowebsite/player.php" )
 end
 
 function ENT:OnYoutubeLoaded()
@@ -166,18 +167,12 @@ function ENT:LoadTwitch( strUserID )
 end
 
 function ENT:LoadVideo()
-	if self.m_bTwitchStream and self.m_strTwitchID then
-		self:LoadTwitch( self.m_strTwitchID )
-		return
-	end
 
 	self.m_pnlWebPage:RunJavascript( [[
-		jQuery("#youtube-player-container")
-			.tubeplayer("play", {
-			id: "]].. self.m_strPlayingID.. [[",
-			time: ]].. self.m_intPlayTime +(RealTime() -self.m_intStartPlay).. [[,
-		});
+		jQuery("#youtube-video-player").tubeplayer("stop");
 	]] )
+
+	self.m_pnlWebPage:RunJavascript( 'jQuery("#youtube-video-player").tubeplayer("play", {id: "' .. self.m_strPlayingID .. '", time: ' .. self.m_intPlayTime +(RealTime() -self.m_intStartPlay) .. '});' )
 
 	self.m_bVideoLoaded = true
 end
@@ -185,11 +180,11 @@ end
 function ENT:UnloadVideo()
 	
 	if self.m_bTwitchStream then
-		self.m_pnlWebPage:OpenURL( "http://g4p.org/YouTube/player.php?uid=".. self.m_strUID )
+		self.m_pnlWebPage:OpenURL( "https://linktowebsite/player.php" )
 	else
 		if self:HasPlayer() then
 			self.m_pnlWebPage:RunJavascript( [[
-				jQuery("#youtube-player-container").tubeplayer("stop");
+				jQuery("#youtube-video-player").tubeplayer("stop");
 			]] )
 		end
 
@@ -200,14 +195,6 @@ function ENT:UnloadVideo()
 end
 
 function ENT:PlayVideo( strVideoID, intTime )
-	if not self:HasPlayer() then
-		timer.Simple( 1, function()
-			if not IsValid( self ) then return end
-			self:PlayVideo( strVideoID, intTime +1 )
-		end )
-
-		return
-	end
 	
 	self.m_intPlayTime = intTime
 	self.m_intStartPlay = RealTime()
@@ -236,14 +223,10 @@ function ENT:StopVideo()
 end
 
 function ENT:GetMaxVolume()
-	return GetConVarNumber( "sgs_tv_volume" ) or 50
+	return GetConVarNumber( "sgs_tv_volume" )
 end
 
 function ENT:UpdateVolume()
-	if not self:HasPlayer() then return end
-	if not ValidPanel( self.m_pnlWebPage ) then return end
-	if not self:IsVideoLoaded() then return end
-	
 	local vol
 	if self:GetMaxVolume() ~= 0 then
 		local fallOff = 512
@@ -253,14 +236,8 @@ function ENT:UpdateVolume()
 	else
 		vol = 0
 	end
-	
-	if self.m_bTwitchStream then
-		--
-	else
-		self.m_pnlWebPage:RunJavascript( [[
-			jQuery("#youtube-player-container").tubeplayer("volume", ]].. vol.. [[);
-		]] )
-	end
+
+	self.m_pnlWebPage:RunJavascript( 'jQuery("#youtube-video-player").tubeplayer("volume",' .. vol .. ');' )
 end
 
 function ENT:Draw()
@@ -277,7 +254,7 @@ function ENT:Draw()
 		return
 	end
 
-	if self:GetPos():Distance( EyePos() ) > 768 then
+	if self:GetPos():Distance( EyePos() ) > 5240 then
 		return
 	end
 
@@ -301,22 +278,6 @@ function ENT:Draw()
 end
 
 function ENT:Think()
-	if not ValidPanel( self.m_pnlWebPage ) then return end
-	if not self:HasPlayer() then return end
-	
-	if self:IsPlayingVideo() then
-		local range = self.m_bTwitchStream and 400 or 1024
-		if not self:IsVideoLoaded() then
-			if LocalPlayer():GetPos():Distance( self:GetPos() ) <= range then
-				self:LoadVideo()
-			end
-		else
-			if LocalPlayer():GetPos():Distance( self:GetPos() ) > range then
-				self:UnloadVideo()
-			end
-		end
-	end
-
 	self:UpdateVolume()
 end
 

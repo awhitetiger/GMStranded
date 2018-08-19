@@ -101,7 +101,7 @@ function ENT:Initialize()
 end
 
 function ENT:Use( pPlayer )
-	//NetworkShowTVMenu( self, pPlayer )
+	NetworkShowTVMenu( self, pPlayer )
 end
 
 function ENT:PlayVideo( strVideoID )
