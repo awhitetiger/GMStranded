@@ -159,13 +159,10 @@ vgui.Register("new_menu", PANEL, "DFrame")
 
 function DeactivateAllButtons()
 	GAMEMODE.NewMenu.btn_option1.active = false
-	GAMEMODE.NewMenu.btn_option2.active = false
-	GAMEMODE.NewMenu.btn_option3.active = false
 	GAMEMODE.NewMenu.btn_option5.active = false
 	GAMEMODE.NewMenu.btn_option6.active = false
 	GAMEMODE.NewMenu.btn_option7.active = false
 	GAMEMODE.NewMenu.btn_option8.active = false
-	GAMEMODE.NewMenu.btn_option9.active = false
 end
 
 local MOTD = {}
