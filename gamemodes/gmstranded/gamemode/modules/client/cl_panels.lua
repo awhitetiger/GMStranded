@@ -2078,7 +2078,7 @@ function PANEL:Paint( w, h )
 	--draw.RoundedBoxEx( 16, 0, 0, self:GetWide(), self:GetTall(), Color(80, 80, 80, 150), true, true, true, true )
 	
 	
-	draw.SimpleTextOutlined( " |G4P| Stranded ", "ScoreboardDefaultTitle", 8, 0, Color(255,255,255,255), TEXT_ALIGN_LEFT, TEXT_ALIGN_LEFT, 2, Color(0,0,0,255))
+	draw.SimpleTextOutlined( " Legend\'s Stranded Server ", "ScoreboardDefaultTitle", 8, 0, Color(255,255,255,255), TEXT_ALIGN_LEFT, TEXT_ALIGN_LEFT, 2, Color(0,0,0,255))
 
 end
 
