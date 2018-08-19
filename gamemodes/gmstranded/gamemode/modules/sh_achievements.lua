@@ -425,7 +425,7 @@ Achievement_RegisterAchievement( ACH )
 local ACH = {}
 ACH.short = "steamgroup"
 ACH.long = "Community Member"
-ACH.show = true
+ACH.show = false --false until i make the checker
 ACH.displaytext = "Join the G4P Group on Steam (Requires Survival Level 5+)"
 ACH.cc = "sgs_equiphat steamgroup"
 ACH.at = "Access Q > Options menu to equip your new hat."
