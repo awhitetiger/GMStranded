@@ -1,5 +1,6 @@
 local PlayerMeta = FindMetaTable("Player")
 local EntityMeta = FindMetaTable("Entity")
+local xp_modifier = 1
 
 SGS.bonusexp = {}
 
@@ -157,7 +158,7 @@ function PlayerMeta:AddExp( skill, amt, shared )
 		end
 		if world_mod < 1 and self:GetLevel( "survival" ) < 5 then world_mod = 1 end
 
-		amt = amt * world_mod
+		amt = (amt * world_mod) * xp_modifier
 
 		if GAMEMODE.Tribes:GetTribeLevel( self ) >= 8 then
 			amt = math.ceil(amt * 1.20)
