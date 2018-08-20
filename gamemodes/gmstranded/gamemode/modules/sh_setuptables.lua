@@ -339,7 +339,7 @@ function SGS_SetUpTablesShared()
 		"Where am I? This isn't right. ",
 		"Tis the season... for savings! Come see me for holiday specials!",
 		"Bring your Candy Canes to me! I'll trade them for some fun stuff!",
-		"One free trip to Xen for the first 5000 customers!"
+		"One free trip to Xen for the first 5000 customers!",
 		"Hey.. Hey %P... Hey... Hey! Hey... Hey..",
 		"%P, Where did you get that shirt? From Vorty? Bah!"
 	}
