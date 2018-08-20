@@ -383,7 +383,7 @@ ITEM.uid = "other1"
 ITEM.description = "It looks very unstable.\nWhat could this be for?"
 ITEM.cost = 3000
 ITEM.gives = { inter_dimensional_core = 1}
-ITEM.material = "vgui/other/sapphire_new.png"
+ITEM.material = "vgui/gems/void_new.png"
 Shop_RegisterShopItem( "other", ITEM )
 
 ITEM = {}
