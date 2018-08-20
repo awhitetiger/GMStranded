@@ -12,7 +12,7 @@ ITEM.uid = "structure1"
 ITEM.description = "Holds 3x the normal amount"
 ITEM.cost = 2500
 ITEM.gives = { gms_pcache2 = 1}
-ITEM.material = "vgui/SGS/test1.vmt"
+ITEM.material = "vgui/gems/diamond_new.png"
 Shop_RegisterShopItem( "structures", ITEM )
 
 
@@ -22,19 +22,18 @@ ITEM.uid = "structure2"
 ITEM.description = "Powered by hopes and dreams."
 ITEM.cost = 2500
 ITEM.gives = { gms_radio = 1}
-ITEM.material = "vgui/SGS/test1.vmt"
+ITEM.material = "vgui/gems/diamond_new.png"
 Shop_RegisterShopItem( "structures", ITEM )
 
---[[
+
 ITEM = {}
 ITEM.title = "Television"
 ITEM.uid = "structure3"
 ITEM.description = "Somehow it actually works?"
 ITEM.cost = 5000
 ITEM.gives = { gms_tv = 1}
-ITEM.material = "vgui/SGS/test1.vmt"
+ITEM.material = "vgui/gems/diamond_new.png"
 Shop_RegisterShopItem( "structures", ITEM )
-]]
 
 //-=relics--//
 
