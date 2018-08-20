@@ -4930,11 +4930,9 @@ timer.Create("sgs_checkbot", 10, 0, function()
 	}
 	
 	
-	print("checking bots...")
 	for k,v in pairs(player.GetAll()) do
 		local looking_entity = v:GetEyeTrace().Entity
 		if (table.HasValue(resource_table, looking_entity:GetClass())) then
-			print(v.botcount)
 			SGS_CheckBot(v)
 		end
 	end
