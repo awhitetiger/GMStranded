@@ -6584,7 +6584,7 @@ end
 
 function SGS_ChatAddons( ply, text, public )
 	if (string.sub(string.lower(text), 1, 7) == "!addons") then
-		ply:SendLua("gui.OpenURL('http://steamcommunity.com/workshop/filedetails/?id=488250410')")
+		ply:SendLua("gui.OpenURL('https://steamcommunity.com/sharedfiles/filedetails/?id=1445221834')")
 		return false
 	end
 end
@@ -6592,7 +6592,7 @@ hook.Add( "PlayerSay", "SGS_ChatAddons", SGS_ChatAddons )
 
 function SGS_ChatDonate( ply, text, public )
 	if (string.sub(string.lower(text), 1, 7) == "!donate") then
-		ply:SendLua("gui.OpenURL('https://g4p.org/donate')")
+		ply:SendLua("gui.OpenURL('http://wallahiadeem.chickenkiller.com/shop')")
 		return false
 	end
 end
@@ -6609,12 +6609,12 @@ hook.Add( "PlayerSay", "SGS_ChatMOTD", SGS_ChatMOTD )
 
 function SGS_SteamGroupPage( ply, text, public )
 	if (string.sub(string.lower(text), 1, 6) == "!steam") then
-		ply:SendLua("gui.OpenURL('http://steamcommunity.com/groups/gman4president')")
+		ply:SendLua("gui.OpenURL('')")
 		return false
 	end
 
 	if (string.sub(string.lower(text), 1, 6) == "!group") then
-		ply:SendLua("gui.OpenURL('http://steamcommunity.com/groups/gman4president')")
+		ply:SendLua("gui.OpenURL('')")
 		return false
 	end
 end
