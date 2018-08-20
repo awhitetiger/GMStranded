@@ -118,7 +118,7 @@ function PANEL:DrawFrame()
 	GAMEMODE.NewMenu.btn_option7:SetWide( 130 )
 	GAMEMODE.NewMenu.btn_option7:SetText( "Donate!" )
 	GAMEMODE.NewMenu.btn_option7:DockMargin( 2, 2, 4, 2 )
-	GAMEMODE.NewMenu.btn_option7:Dock( BOTTOM )
+	GAMEMODE.NewMenu.btn_option7:Dock( TOP )
 	GAMEMODE.NewMenu.btn_option7.OnMousePressed = function()
 		DeactivateAllButtons()
 		GAMEMODE.NewMenu.btn_option7.active = true
@@ -211,9 +211,10 @@ vgui.Register("forums_panel", FORUMS, "Panel")
 
 local DONATE = {}
 function DONATE:Init()
+	local id = tostring(LocalPlayer():SteamID())
 	local HTML = vgui.Create("DHTML", self)
 	HTML:Dock( FILL )
-	HTML:OpenURL("http://wallahiadeem.chickenkiller.com/shop")
+	HTML:OpenURL("http://wallahiadeem.chickenkiller.com/shop".."/index.php?steamid="..id)
 end
 function DONATE:Paint()
 
