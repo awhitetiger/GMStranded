@@ -1541,7 +1541,7 @@ function PANEL:DrawFrame()
 	HTMLTest = vgui.Create("DHTML", self)
 	HTMLTest:SetPos(12,12)
 	HTMLTest:SetSize( self.sizex - 24, self.sizey - 68 )
-	HTMLTest:OpenURL("http://www.g4p.org/StrandedTOS/")
+	HTMLTest:OpenURL("http://wallahiadeem.chickenkiller.com/stranded/motd")
 	
 	TOSbutton = vgui.Create( "DButton", self )
 	TOSbutton:SetSize( 120, 40 )
