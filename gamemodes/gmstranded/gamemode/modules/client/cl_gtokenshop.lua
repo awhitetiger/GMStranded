@@ -6,7 +6,10 @@ function SGS_ShopMenu()
 	SGS.gshop:SetSize( 320,370 )
 	SGS.gshop:SetPos( ScrW() / 2 - 160, ScrH() / 2 - 170 )
 	SGS.gshop:SetTitle( "GToken Shop" )
-
+	SGS.gshop.Paint = function( self, w, h )
+	draw.RoundedBox( 0, 0, 0, w, h, Color( 0, 0, 0, 150 ) )
+	end
+	
 	local CatList = vgui.Create( "DPanelList", SGS.gshop)
 	CatList:AddItem(ToolsCollapseCat)
 	CatList:EnableVerticalScrollbar( true )
