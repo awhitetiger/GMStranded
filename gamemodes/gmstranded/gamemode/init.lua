@@ -4856,6 +4856,7 @@ function PlayerMeta:CheckBot()
 end
 
 function SGS_CheckBot( ply )
+	if ply.afk == true then return end
 	if not ply.checkbottimethreshold then ply.checkbottimethreshold = 0 end
 	if IsValid( ply:GetActiveWeapon() ) and ( string.sub(string.lower( ply:GetActiveWeapon():GetClass() ), 1, 12) == "weapon_melee" ) then
 		return
@@ -4871,7 +4872,7 @@ function SGS_CheckBot( ply )
 	ply:ConCommand("-movedown")
 	ply:ConCommand("-moveup")
 
-	local botthreshold = 20
+	local botthreshold = 4
 
 	if (ply:EyeAngles().p == ply.botangle) then
 		ply.botcount = ply.botcount + 1
@@ -4906,6 +4907,38 @@ function SGS_CheckBot( ply )
 		ply.botwarningcount = ply.botwarningcount + 1
 	end
 end
+
+timer.Create("sgs_checkbot", 10, 0, function()
+	local resource_table = {
+	"gms_coalnode",
+	"gms_goldnode",
+	"gms_ironnode",
+	"gms_meteornode",
+	"gms_mithrilnode",
+	"gms_naquadahnode",
+	"gms_platinumnode",
+	"gms_silvernode",
+	"gms_stonenode",
+	"gms_triniumnode",
+	"gms_tree",
+	"gms_tree2",
+	"gms_tree3",
+	"gms_tree4",
+	"gms_tree5",
+	"gms_tree6",
+	"gms_tree7",
+	}
+	
+	
+	print("checking bots...")
+	for k,v in pairs(player.GetAll()) do
+		local looking_entity = v:GetEyeTrace().Entity
+		if (table.HasValue(resource_table, looking_entity:GetClass())) then
+			print(v.botcount)
+			SGS_CheckBot(v)
+		end
+	end
+end)
 
 function SGS_PotionDrink( ply, potion )
 
