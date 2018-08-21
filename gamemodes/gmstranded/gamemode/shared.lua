@@ -28,9 +28,9 @@ GM.GroupData = {
 	["user"] 		= { name = "Guest", 		color = Color( 255, 75, 255, 255 ) }
 }
 
-SGS.maxguestprops = 50
-SGS.maxmemberprops = 90
-SGS.maxdonatorprops = 115
+SGS.maxguestprops = 30
+SGS.maxmemberprops = 60
+SGS.maxdonatorprops = 100
 
 SGS.maxgueststructures = 25
 SGS.maxmemberstructures = 50
