@@ -236,19 +236,19 @@ function SPropProtection.Disconnect(ply)
 	if(tonumber(SPropProtection.Config["dpd"]) == 1) then
 		if(ply:IsAdmin() and tonumber(SPropProtection.Config["dae"]) == 0) then
 			if ply:IsUserGroup("moderator") then
-				timer.Create("SPropProtection.DRemove: "..sid, 43200, 1, function() SPropProtection.DRemove( sid, sname ) end )
+				timer.Create("SPropProtection.DRemove: "..sid, 259200, 1, function() SPropProtection.DRemove( sid, sname ) end )
 			else
 				return
 			end
 		end
 		if ply:IsMember() then
 			if ply:IsDonator() then
-				timer.Create("SPropProtection.DRemove: "..sid, 43200, 1, function() SPropProtection.DRemove( sid, sname ) end )
+				timer.Create("SPropProtection.DRemove: "..sid, 259200, 1, function() SPropProtection.DRemove( sid, sname ) end )
 			else
-				timer.Create("SPropProtection.DRemove: "..sid, 1800, 1, function() SPropProtection.DRemove( sid, sname ) end )
+				timer.Create("SPropProtection.DRemove: "..sid, 7200, 1, function() SPropProtection.DRemove( sid, sname ) end )
 			end
 		else
-			timer.Create("SPropProtection.DRemove: "..sid, tonumber(SPropProtection.Config["delay"]), 1, function() SPropProtection.DRemove( sid, sname ) end )
+			timer.Create("SPropProtection.DRemove: "..sid, 1800, 1, function() SPropProtection.DRemove( sid, sname ) end )
 		end
 	end
 end
