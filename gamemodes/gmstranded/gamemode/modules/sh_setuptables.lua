@@ -185,6 +185,7 @@ function SGS_SetUpTablesShared()
 	}
 						
 	SGS.AllowedPackage = {	
+		"ent_lobstercage",
 		"gms_firebrazier",
 		"gms_walllantern",
 		"gms_firelamp",
