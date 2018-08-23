@@ -628,3 +628,14 @@ RECIPE.ent = "gms_miner"
 RECIPE.spawntime = 3
 RECIPE.xp = 12000
 Menu_RegisterStructure( "meteoric", RECIPE )
+
+RECIPE = {}
+RECIPE.model = "models/props_junk/PlasticCrate01a.mdl"
+RECIPE.title = "Lobster Cage"
+RECIPE.description = "This device will automatically catch lobsters for you."
+RECIPE.cost = { meteoric_iron = 5, platinum = 10, palm_wood = 10 }
+RECIPE.reqlvl = { construction = 50 }
+RECIPE.ent = "ent_lobstercage"
+RECIPE.spawntime = 3
+RECIPE.xp = 12000
+Menu_RegisterStructure( "meteoric", RECIPE )
