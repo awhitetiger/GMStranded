@@ -42,7 +42,7 @@ function GM.Tribes:InsertTribe( t_id, tribe_table )
 	self.tblTribes[t_id].index = self.tblTribes[t_id].index or t_id
 	self.tblTribes[t_id].members = self.tblTribes[t_id].members or {}
 	self.tblTribes[t_id].level = self.tblTribes[t_id].level or 0
-	self.tblTribes[t_id].perma = self.tblTribes[t_id].perma or false
+	self.tblTribes[t_id].perma = self.tblTribes[t_id].perma or true
 	
 	if self.tblTribes[t_id].admins == nil then
 		self.tblTribes[t_id].admins = {}
